@@ -9,6 +9,13 @@ public class PlayerController : MonoBehaviour
     public bool isMoving;
     public Vector2 input;
 
+    private Animator animator;
+
+    private void Awake() //Wanneer de script instance is geladen, wordt deze code afgespeeld.
+    {
+     animator = GetComponent<Animator>();     
+    }
+
     private void Update()
     {
         if (!isMoving)
@@ -16,11 +23,14 @@ public class PlayerController : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
-            //if (input.x != 0) input.y = 0; //als ik naar links of rechts ga, dan wil ik dat mn input.y gelijk is aan 0 (Niet toepasselijk atm)
-
-
+            Debug.Log("this is input.x" + input.x);
+            Debug.Log("this is input.y" + input.y);
+            //if (input.x != 0) input.y = 0; //als ik naar links of rechts ga, dan wil ik dat mn input.y gelijk is aan 0 (stopt schuin lopen)
             if (input != Vector2.zero)
             {
+                animator.SetFloat("moveX", input.x);
+                animator.SetFloat("moveY", input.y);
+
                 var targetPos = transform.position; //in deze variable kan je een positie opslaan.
                 targetPos.x += input.x;
                 targetPos.y += input.y;
@@ -41,9 +51,7 @@ public class PlayerController : MonoBehaviour
             //we pakken de originele positie, we bewegen naar de bestemde targetposition, met een snelheid movespeed
             yield return null; // Wait for the next frame
         }
-
-        // Ensure the player reaches exactly the target position
-        transform.position = targetPos;
+        transform.position = targetPos;  // Ensure the player reaches exactly the target position
 
         isMoving = false;
     }
