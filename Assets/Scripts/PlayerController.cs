@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
 
+    public LayerMask solidObjectsLayer;
     private void Awake() //Wanneer de script instance is geladen, wordt deze code afgespeeld.
     {
      animator = GetComponent<Animator>();     
@@ -35,11 +37,26 @@ public class PlayerController : MonoBehaviour
                 targetPos.x += input.x;
                 targetPos.y += input.y;
 
-                StartCoroutine(Move(targetPos)); //dit runned constant
+                if (isWalkable(targetPos))
+                {
+                    StartCoroutine(Move(targetPos)); //dit runned constant
+                }
             }
         }
     }
-    IEnumerator Move(Vector3 targetPos) //opzoeken wat een IEnumerable is
+
+    private bool isWalkable(Vector3 targetPos)
+    {
+        if (Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer) !=
+            null) //als de positie waar we heen willen lopen zou overlappen met een solid object dan is het lopen false.
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public IEnumerator Move(Vector3 targetPos) //opzoeken wat een IEnumerable is
     {
         isMoving = true;
 
