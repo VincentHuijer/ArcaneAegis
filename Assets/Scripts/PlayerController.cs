@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactableLayer); //hierin kijken we of we overlappen met de interactpositie en de interactable layer. .
         if (collider != null) //Als op het einde van de interactPos lijn, er een interactableLayer is, dan doe iets (interacten)
         {
-            Debug.Log("Hier is iets!");
+            collider.GetComponent<Interactable>()?.Interact(); //we gebruiken de collider of iets overlapt, als het een interactable is(npc/challenger) run interact.
         } 
     }
 
