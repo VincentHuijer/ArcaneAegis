@@ -2910,7 +2910,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eda8ee125eea314e802e1fac00ab830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 0}
+  dialogue:
+    lines:
+    - Congratulations on passing the Ohio State Bar Exam
+    - However next time when you enter the court room. Maybe do not shout "THE ONE
+      PIECE, THE ONE PIECE IS REAL".
+    - You gonna scare away your clients.
 --- !u!1 &1956629618
 GameObject:
   m_ObjectHideFlags: 0
