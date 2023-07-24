@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCController : MonoBehaviour, Interactable
-{
+ {
+    [SerializeField] Dialogue dialogue;
+
     public void Interact()
     {
-        Debug.Log("You will talk to this npc");
+        DialogueManager.Instance.ShowDialogue(dialogue);
     }
 }
