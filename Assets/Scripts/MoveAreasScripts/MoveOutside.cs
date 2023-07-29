@@ -10,13 +10,15 @@ public class MoveOutside : MonoBehaviour
     //level move zoned enter, if collider is a player
     //move to another scene
 
-    private void onTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Entered");
         print("Trigger entered");
         //could use other.GetComponent<Player>() to see if game object has a player component
 
         if(other.tag == "player")
         {
+            Debug.Log("Player registered");
             //player entered, so move level
             print("Switching scene to " + sceneBuildIndex);
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
