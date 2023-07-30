@@ -16,7 +16,7 @@ public class MoveOutside : MonoBehaviour
         print("Trigger entered");
         //could use other.GetComponent<Player>() to see if game object has a player component
 
-        if(other.tag == "player")
+        if(other.tag == "Player")
         {
             Debug.Log("Player registered");
             //player entered, so move level
