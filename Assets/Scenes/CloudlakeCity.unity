@@ -2337,7 +2337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 89.8}
   m_SizeDelta: {x: 786.8591, y: 164.65039}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863353941
@@ -3438,11 +3438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b44e553d32e775448963b8d5da893c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackScreen: {fileID: 0}
-  flickerDuration: 0.2
-  flickerDelay: 0.2
-  flickerCount: 2
-  sceneBuildIndex: 2
 --- !u!114 &1979287099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3455,8 +3450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10555c2c58f831e4fa5702d00d7026b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flickerDuration: 0.2
-  fadeDuration: 2
 --- !u!1 &1993495295
 GameObject:
   m_ObjectHideFlags: 0
