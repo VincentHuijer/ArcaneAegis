@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerController : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public bool isMoving;

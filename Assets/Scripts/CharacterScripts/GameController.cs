@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public enum GameState { FreeRoam, Dialogue, Battle } //freeRoam = kunnen rondlopen, Dialogue = in een gesprek, Battle = in een gevecht.
 public class GameController : MonoBehaviour
 {
-    [SerializeField] PlayerController playerController;
+    [SerializeField] Player playerController;
 
     GameState state;
 
